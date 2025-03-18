@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | English Medium Primary School Odahatha </title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Image Slideshows for Co-curricular Activities
+
+    const artImages = ['a1.jpg', 'a2.jpg', 'a3.jpg', 'a4.jpg', 'a5.jpg', 'a6.jpg', 'a8.jpg', 'a9.jpg'];
+    const sportsImages = ['sa1.jpg','sa1.jpg', 'sa1.jpg'];
+    const musicImages = ['c1.jpg', 'c2.jpg', 'c3.jpg', 'c4.jpg', 'c5.jpg', 'c6.jpg', 'c7.jpg'];
+
+    let musicIndex = 0, sportsIndex = 0, artIndex = 0;
+
+    // Preload images
+    function preloadImages(images) {
+      images.forEach(src => {
+        const img = new Image();
+        img.src = src;
+      });
+    }
+
+    function startSlideshows() {
+      preloadImages(musicImages);
+      preloadImages(sportsImages);
+      preloadImages(artImages);
+
+      setInterval(() => {
+        musicIndex = (musicIndex + 1) % musicImages.length;
+        const musicImg = document.getElementById('music-img');
+        musicImg.classList.add('fade-out');
+        setTimeout(() => {
+          musicImg.src = musicImages[musicIndex];
+          musicImg.classList.remove('fade-out');
+        }, 1000);
+      }, 5000);
+
+      setInterval(() => {
+        sportsIndex = (sportsIndex + 1) % sportsImages.length;
+        const sportsImg = document.getElementById('sports-img');
+        sportsImg.classList.add('fade-out');
+        setTimeout(() => {
+          sportsImg.src = sportsImages[sportsIndex];
+          sportsImg.classList.remove('fade-out');
+        }, 1000);
+      }, 5000);
+
+      setInterval(() => {
+        artIndex = (artIndex + 1) % artImages.length;
+        const artImg = document.getElementById('art-img');
+        artImg.classList.add('fade-out');
+        setTimeout(() => {
+          artImg.src = artImages[artIndex];
+          artImg.classList.remove('fade-out');
+        }, 1000);
+      }, 5000);
+    }
+
+    window.onload = startSlideshows;
+
+    function openGallery(id) {
+      document.getElementById(id).style.display = 'flex';
+    }
+
+    function closeGallery(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+  </script>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <img src="logo.jpg" alt="School Logo">
+      <span>English Medium Primary School Odahatha </span>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="teachers.html">Teachers</a></li>
+    </ul>
+  </nav>
+
+  <!-- About Content -->
+  <section class="mission">
+    <h2 class="section-title">Our Mission & Vision</h2>
+    <div class="mission-content">
+      <div class="mission-image-wrapper">
+        <img src="dp.jpg" alt="School Image" class="mission-image">
+      </div>
+      <div class="mission-text">
+        <p><strong>Our Mission:</strong> To create a nurturing and inclusive learning environment that fosters academic excellence, personal growth, and social responsibility.</p>
+        <p><strong>Our Vision:</strong> To be recognized as a leading institution that shapes future leaders and innovators through holistic education and values-driven learning.</p>
+        <p>We believe in cultivating critical thinkers and empathetic individuals, committed to making a meaningful impact in society. Through collaboration with parents and community, we nurture the leaders of tomorrow.</p>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+
+  <!-- Co-curricular Activities -->
+  <!-- Learning Through Activities Section -->
+  <section class="activities-learning">
+
+    <section class="creative-learning">
+      <h2>Creative Learning Experiences</h2>
+      <div class="card-container">
+        <div class="card">
+          <div class="card-image">
+            <img src="a6.jpg" alt="Creative Expression through Poetry" />
+          </div>
+          <p>Creative Expression through Poetry.</p>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="gpgp.jpg" alt="Group projects and collaborative learning experiences" />
+          </div>
+          <p>Group projects and collaborative learning experiences.</p>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="rp.jpg" alt="Role-playing activities" />
+          </div>
+          <p>Role-playing activities to foster creativity.</p>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="ac.jpg" alt="Creative arts, crafts" />
+          </div>
+          <p>Creative arts and crafts to enhance learning.</p>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="np.jpg" alt="Field trips and nature exploration" />
+          </div>
+          <p>Nature exploration and preservation</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Child-Friendly Classes Section -->
+    <section class="child-friendly">
+      <h2>Child-Friendly Classrooms</h2>
+      <div class="card-container">
+        <div class="card">
+          <div class="card-image">
+            <img src="cd.jpg" alt="Bright and colorful classroom decor" />
+          </div>
+          <p>Bright and colorful classroom decor to inspire young minds.</p>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="gpp2.jpg" alt="Comfortable seating and cozy learning corners" />
+          </div>
+          <p>Comfortable seating and cozy learning corners for focused study.</p>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="rec2.jpg" alt="Play-based learning resources" />
+          </div>
+          <p>Play-based learning resources for holistic development.</p>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="cf.jpg" alt="Friendly and supportive teachers" />
+          </div>
+          <p>Friendly and supportive teachers guiding every step.</p>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="rec.jpg" alt="Focus on emotional and social development" />
+          </div>
+          <p>Focus on emotional and social development for a balanced education.</p>
+        </div>
+      </div>
+    </section>
+
+  </section>
+
+  <!-- Gallery -->
+  <section class="activities">
+    <h2>Co-curricular Activities</h2>
+    <p>We offer a wide range of co-curricular activities that support holistic development:</p>
+
+    <div class="gallery">
+      <div class="album" onclick="openGallery('music-gallery')">
+        <img id="music-img" src="c1.jpg" alt="Music Class">
+        <p>Music & Dance</p>
+      </div>
+      <div class="album" onclick="openGallery('sports-gallery')">
+        <img id="sports-img" src="sa1.jpg" alt="Sports Activities">
+        <p>Sports & Athletics</p>
+      </div>
+      <div class="album" onclick="openGallery('art-gallery')">
+        <img id="art-img" src="a1.jpg" alt="Art & Craft">
+        <p>Art & Craft</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hidden Full Gallery Popups -->
+  <div id="music-gallery" class="popup-gallery">
+    <span class="close-btn" onclick="closeGallery('music-gallery')">&times;</span>
+    <div class="gallery-content">
+      <img src="c1.jpg" alt="Music Image 1">
+      <img src="c2.jpg" alt="Music Image 2">
+      <img src="c3.jpg" alt="Music Image 3">
+      <img src="c4.jpg" alt="Music Image 4">
+      <img src="c5.jpg" alt="Music Image 5">
+      <img src="c6.jpg" alt="Music Image 6">
+      <img src="c7.jpg" alt="Music Image 7">
+    </div>
+  </div>
+  
+
+  <div id="sports-gallery" class="popup-gallery">
+    <span class="close-btn" onclick="closeGallery('sports-gallery')">&times;</span>
+    <div class="gallery-content">
+      <img src="sa1.jpg" alt="">
+    </div>
+  </div>
+
+  <div id="art-gallery" class="popup-gallery">
+    <span class="close-btn" onclick="closeGallery('art-gallery')">&times;</span>
+    <div class="gallery-content">
+      <img src="a1.jpg" alt="Art Image 1">
+      <img src="a2.jpg" alt="Art Image 2">
+      <img src="a3.jpg" alt="Art Image 3">
+      <img src="a4.jpg" alt="Art Image 4">
+      <img src="a5.jpg" alt="Art Image 5">
+      <img src="a6.jpg" alt="Art Image 6">
+      <img src="a8.jpg" alt="Art Image 7">
+      <img src="a9.jpg" alt="Art Image 8">
+    </div>
+  </div>
+  
+
+</body>
+<footer>
+  <p>
+      <a href="https://www.facebook.com/share/1Bha8LwvY6/?mibextid=qi2Omg" target="_blank" style="text-decoration: none; color: #4267B2; font-weight: bold;">
+          Visit us on Facebook
+      </a>
+  </p>
+  <p style="font-size: 14px; color: #555;">
+      This website is made for presentation purposes only and holds no commercial intent.
+  </p>
+</footer>
+
+</html>
